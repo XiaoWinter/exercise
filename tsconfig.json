@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es6",                        // 将代码编译为 ECMAScript 6（可以根据需要调整为 'es5' 或 'esnext'）
+    "module": "esnext",                      // 使用 ES 模块（适用于现代打包工具，如 Webpack）
+    "moduleResolution": "node",              // 解析模块的方式，node 适合用于 Node.js 环境，且大多数前端工具使用
+    "strict": true,                          // 启用所有严格类型检查选项（推荐开启）
+    "esModuleInterop": true,                 // 启用 ES 模块和 CommonJS 模块的互操作性
+    "skipLibCheck": true,                    // 跳过库文件的类型检查（提高编译速度）
+    "forceConsistentCasingInFileNames": true, // 保证文件名大小写一致
+    "outDir": "./lib",                      // 编译后的输出目录
+    "baseUrl": "./src",                      // 设置模块的基础目录为 src
+    "paths": {
+      "*": ["node_modules/*", "src/types/*"]  // 使 TypeScript 能找到自定义类型定义
+    },
+    "allowJs": true,                         // 允许编译 JS 文件（如果你有 JS 文件需要处理）
+    "allowSyntheticDefaultImports": true,     // 允许默认导入（适用于 CommonJS 模块）
+    "resolveJsonModule": true,               // 允许导入 JSON 文件
+    "lib": ["dom", "es6", "esnext"],         // 使用 ECMAScript 和 DOM 的类型库
+    "noImplicitAny": true,                   // 不允许隐式的 any 类型
+    "noUnusedLocals": true,                  // 开启检查未使用的局部变量
+    "noUnusedParameters": true,              // 开启检查未使用的函数参数
+    "removeComments": true,                  // 编译后删除注释
+    "sourceMap": true,                       // 生成 source map 文件，便于调试
+    "declaration": true,                     // 生成 .d.ts 类型声明文件
+    "declarationMap": true,                  // 生成声明文件的 source map
+    "isolatedModules": true,                 // 强制 TypeScript 文件按单独模块处理（通常配合 Babel 使用）
+    "jsx": "react"                           // 如果使用 React，指定 JSX 编译模式
+  },
+  "include": [
+    "src/**/*"  // 包含 src 目录下的所有文件
+  ],
+  "exclude": [
+    "node_modules", // 排除 node_modules 目录
+    "dist"          // 排除 dist 目录（编译输出目录）
+  ]
+}

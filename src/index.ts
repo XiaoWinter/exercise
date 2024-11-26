@@ -1,3 +1,5 @@
+import './index.scss';
+
 let timer: number;
 let isRunning: boolean = false;
 let isPaused: boolean = false;

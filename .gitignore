@@ -1,0 +1,60 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# TypeScript
+dist/
+build/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE/Editor
+.vscode/
+.idea/
+
+# Webpack
+.cache/
+webpack-stats.json
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Sass/SCSS
+*.css.map
+
+# MacOS
+.AppleDouble
+.LSOverride
+
+# npm package lock
+package-lock.json
+
+# yarn lock
+yarn.lock
+
+# JetBrains
+.idea/
+
+# Optional npm cache
+.npm/
+
+# TypeScript coverage output
+coverage/
+
+# Next.js (if using Next.js)
+.next/
+
+# Create React App (if using Create React App)
+build/

@@ -23,16 +23,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Setup pnpm
-      # You may pin to the exact commit or the version.
-      # uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2
-      uses: pnpm/action-setup@v4.0.0
-      with:
-        # Version of pnpm to install
-        version: 8.15.9
-        # Where to store pnpm files
-        # If specified, run `pnpm install`
-        run_install: pnpm install
-          
+      run: npm install -g pnpm
+      
+    - name: update dependcy
+      run: pnpm install
+    
     - name: Build
-      run: |
-        pnpm run build
+      run: pnpm run build
+        

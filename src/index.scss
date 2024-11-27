@@ -1,190 +1,164 @@
-// 全局样式
-* {
+ /* 通用样式 */
+ * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(45deg, #2e3b4e, #1e2a38);  // 深蓝渐变背景，稳定且不刺眼
-  color: #fff;
+  background-color: #f4f7fb; /* 温和的浅灰色背景 */
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 20px;
-  background-size: 400% 400%;
-  animation: gradientBackground 15s ease infinite;  // 渐变背景
+  margin: 0;
+  padding: 10px;
 }
 
-// 渐变背景动画
-@keyframes gradientBackground {
-  0% {
-      background-position: 0% 50%;
-  }
-  50% {
-      background-position: 100% 50%;
-  }
-  100% {
-      background-position: 0% 50%;
-  }
-}
-
+/* 容器样式 */
 .container {
-  background: rgba(255, 255, 255, 0.2); // 半透明背景
-  border-radius: 15px;
-  padding: 30px;
+  background: linear-gradient(145deg, #ffffff, #f0f7ff); /* 使用渐变色作为背景 */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 15px;
   width: 100%;
-  max-width: 600px;
+  max-width: 400px; /* 限制容器最大宽度，确保不太宽 */
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
+/* 标题样式 */
 h1 {
-  font-size: 2.5rem;
-  color: #fff;
-  margin-bottom: 20px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #4caf50;
 }
 
+/* 运动项目列表 */
 .exercise {
-  font-size: 1.2rem;
-  color: #ddd;
-  margin-bottom: 12px;
-  font-weight: 600;
-  text-align: left;
-  padding-left: 15px;
-  position: relative;
+  font-size: 14px;
+  margin: 6px 0;
+  padding: 10px;
+  background-color: #e0f7fa;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  word-wrap: break-word; /* 确保长文字不会溢出 */
 }
 
-.exercise::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1.5rem;
-  color: #00c853; // 绿色的对号
-  margin-top: 5px;
+/* 运动项目hover效果 */
+.exercise:hover {
+  background-color: #b3e5fc;
 }
 
+/* 定时器样式 */
 .timer {
-  font-size: 3rem;
-  margin: 30px 0;
-  font-weight: bold;
-  color: #ff8f00;  // 使用温暖的橙色，富有运动感
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 48px; /* 增大字体大小 */
+  width: 120px; /* 设置宽度 */
+  height: 120px; /* 设置高度，保持正方形 */
+  background-color: #3498db; /* 设置背景颜色 */
+  color: white; /* 设置字体颜色 */
+  display: flex; /* 使用 Flexbox 来居中内容 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  border-radius: 15px; /* 设置圆角 */
+  margin: 20px auto; /* 上下边距，左右居中 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
 }
 
+/* 按钮样式 */
 button {
-  padding: 12px 30px;
-  font-size: 1.2rem;
-  margin: 10px;
-  cursor: pointer;
-  border-radius: 10px;
-  border: none;
-  background: linear-gradient(45deg, #ff8f00, #ff5722); // 使用橙色渐变，充满活力
+  background-color: #4caf50;
   color: white;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition: transform 0.3s ease, background 0.3s ease;
+  border: none;
+  padding: 15px 0;
+  border-radius: 8px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+  width: 100%; /* 按钮占满屏幕宽度 */
 }
 
 button:disabled {
-  background-color: #ddd;
+  background-color: #d3d3d3;
   cursor: not-allowed;
 }
 
-button:not(:disabled):hover {
-  transform: scale(1.05);
-  background: linear-gradient(45deg, #ff5722, #ff8f00);
+button:hover:not(:disabled) {
+  background-color: #388e3c;
 }
 
-button:not(:disabled):active {
-  transform: scale(1);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-}
-
-// notification 和进度条
-.notification {
+/* 进度条 */
+.progress-bar-wrapper {
   width: 100%;
-  height: 20px;
-  margin-top: 30px;
-  background-color: #555;  // 深灰色背景
-  position: relative;
-  border-radius: 10px;
+  height: 10px;
+  background-color: #f0f0f0;  /* 淡灰色背景 */
+  border-radius: 8px;
+  margin: 10px 0;
   overflow: hidden;
-  margin-bottom: 20px;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .progress-bar {
-  height: 100%;
-  background-color: #00c853;  // 清新的绿色
-  width: 0%;
-  transition: width 1s ease-in-out;
+  height: 10px;
+  background: linear-gradient(145deg, #4caf50, #66bb6a);  /* 渐变色背景：绿色到浅绿色 */
+  border-radius: 8px;
+  transition: all 1s linear; /* 动画效果：平滑过渡进度和颜色 */
+  width: 0;
 }
 
-// 动态变化的背景
-@keyframes bgAnimation {
-  0% { background-color: #ff8a00; }
-  50% { background-color: #ff9800; }
-  100% { background-color: #ff5722; }
-}
-
-.notification.active {
-  animation: bgAnimation 2s infinite;
-}
-
-#resetBtn {
-  background: linear-gradient(45deg, #00bcd4, #03a9f4);
-  color: white;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-#resetBtn:hover {
-  transform: scale(1.05);
-  background: linear-gradient(45deg, #03a9f4, #00bcd4);
-}
-
-// 适配小屏幕设备
+/* 响应式设计（仅针对手机屏幕） */
 @media (max-width: 600px) {
   .container {
-      padding: 15px;
+    width: 100%;
+    padding: 15px;
   }
 
   h1 {
-      font-size: 2rem;
+    font-size: 18px;
+    margin-bottom: 15px;
   }
 
   .exercise {
-      font-size: 1rem;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding: 10px;
   }
 
   .timer {
-      font-size: 2.5rem;
+    font-size: 32px; /* 在手机上字体稍微小一些 */
+    width: 100px;    /* 缩小宽度 */
+    height: 100px;   /* 缩小高度 */
   }
 
   button {
-      font-size: 1rem;
-      padding: 10px 20px;
+    padding: 12px 0;
+    font-size: 16px;
+    width: 100%; /* 按钮宽度适应 */
   }
 }
-// 禁用按钮的样式
-button:disabled {
-  background-color: #bbb;  // 灰色背景，突出按钮不可用
-  color: #777;  // 使用更淡的字体颜色
-  cursor: not-allowed;  // 设置不可点击的光标
-  border: 1px solid #ddd;  // 给禁用按钮添加边框，增加辨识度
-  opacity: 0.5;  // 降低透明度，增加禁用感
-  box-shadow: none;  // 禁用时取消任何阴影
+
+/* 中等屏幕设备（如 iPad）上的调整 */
+@media (max-width: 1024px) and (min-width: 601px) {
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .timer {
+    font-size: 40px; /* 中等设备字体大小 */
+    width: 110px;    /* 中等设备的宽度 */
+    height: 110px;   /* 中等设备的高度 */
+  }
+
+  button {
+    font-size: 16px;
+    padding: 14px 0;
+  }
 }
 
-// 禁用按钮的hover效果，禁用状态下不会触发
-button:disabled:hover {
-  transform: none;  // 禁用按钮无法触发缩放效果
-  background-color: #bbb;  // 禁用按钮保持灰色背景
+/* 避免页面上过多的外部间距 */
+body {
+  padding: 0;
 }
